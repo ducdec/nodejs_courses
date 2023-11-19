@@ -1,0 +1,66 @@
+<div >
+    Quy uo'c dat ten Components
+</div>
+
+<div class="root"></div>
+<script type="text/babel">
+
+    function Button({title, href, onClick}) {
+        let Component = 'button';
+        const props = {}
+
+        if (onClick) {
+            Component = 'a'
+            props.href = href;
+        }
+
+        if(onClick) {
+            props.onClick = onClick
+        }
+        return (
+            <Component className="mt-4 ml-4 btn btn-primary" {...props}>
+                {title}
+                </Component>
+        )
+    }
+
+    function App() {
+
+        return (
+            <div className="wrapper">
+                <Button 
+                    title="Click me!"
+                    href="https://www.youtube.com/watch?v=GkAkzlrfRYw"
+                    onClick={() => console.log(Math.random()) }
+
+                />
+            </div>
+        );
+    }
+
+    function Input({label, ...inputProps}) {
+        return (
+            <div>
+                <label for="">{label}</label>
+                <input {...inputProps}/>
+            </div>
+        )
+    }
+    function App2() {
+        return (
+            <div class="wrapper">
+                <Input 
+                    label = "Click me!"
+                    type = "text"
+                    title = 'day la checkbox'
+                    placeholder = "Enter name..."
+                    onFocus ={() => console.log(Math.random())}
+                />
+            </div>
+        )
+    }
+    var root = document.querySelector('.root');
+
+    ReactDOM.render(<App2 />, root);
+
+</script>
