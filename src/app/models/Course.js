@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-var slug = require('mongoose-slug-generator')
-
-mongoose.plugin(slug)
+var slug = require('mongoose-slug-updater')
+const mongooseDelete = require('mongoose-delete')
 
 const Schema = mongoose.Schema
 
@@ -19,5 +18,14 @@ const Course = new Schema(
     timestamps: true,
   },
 )
+
+mongoose.plugin(slug)
+
+//Course.plugin(AutoIncrement)
+
+Course.plugin(mongooseDelete, {
+  deletedAt: true,
+  overrideMethods: true,
+}) //them method
 
 module.exports = mongoose.model('Course', Course)

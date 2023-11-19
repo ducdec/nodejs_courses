@@ -1,3 +1,4 @@
+const meRouter = require('./me')
 const coursesRouter = require('./courses')
 const page2Router = require('./page2')
 const siteRouter = require('./site')
@@ -6,6 +7,7 @@ function route(app) {
   // app.get('/page2', (req, res) => {
   //   res.render('page2')
   // })
+  app.use('/me', meRouter)
   app.use('/courses', coursesRouter)
   app.use('/page2', page2Router)
 

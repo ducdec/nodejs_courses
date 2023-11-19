@@ -8,7 +8,12 @@ class Page2Controller {
 
   //[GET] /page2/:slug
   show(req, res) {
-    res.send('Hello World!')
+    res.send('Welcome!!!')
+  }
+
+  //[GET] /page2/page2.1
+  showHai(req, res) {
+    res.render('pages/pageHai')
   }
 }
 

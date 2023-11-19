@@ -15,3 +15,38 @@
         <button type="submit" class="btn btn-primary">Tim kiem </button>
     </form>
 </div>
+
+<script>
+        function PostsList({
+        image,
+        title,
+        desc,
+        published,
+    }) {
+        return (
+            <div className="post-item">
+                <img
+                    src={image}
+                    alt={title}
+                />
+                <h2 className='post-title'>{title}</h2>
+                <p className='post-desc'>{desc}</p>
+                <p className='post-published'>{published}</p>
+            </div>
+        );
+    }
+
+    function App() {
+        return (
+            <div className="posts-list">
+                <PostsList 
+                title="C#(.NET) - Tuong tac"
+                image="https://i.ytimg.com/vi/yR4Gy1jbX48/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AH-CYAC0AWKAgwIABABGEggVChlMA8=&rs=AOn4CLDPDLhs3Y4IsSqEUAX5S11q6677-w"
+                desc = "Ban co kien thuc ngon ngu"
+                published= "Mot nam truoc"
+                />
+
+            </div>
+        );
+    }
+</script>

@@ -7,6 +7,24 @@ h2 {
   color: blue;
 }
 
-.course-item {
-  margin-top: 16px;
+.card-text{
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.select-all {
+  min-width: 90px;
+}
+
+.checkbox-select-all {
+  width: 140px;
+  margin: 0 8px;
 }

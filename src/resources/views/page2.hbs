@@ -1,1 +1,111 @@
-<h1>PAGE2</h1>
+<div id="stack">
+    <a href="page2/page2.1">page2.1</a>
+    <a href="">page2.2 </a>
+    <a href="">page2.3</a>
+</div>
+<div id="root">Page2</div>
+
+<script type = 'text/babel'>
+
+    //ReactDOM.render(<App />, document.getElementById('root'));
+
+    // lay API
+//    const F8API = "https://api-gateway.fullstack.edu.vn/api/pro-courses";
+//    function getCourses(callback) {
+//        fetch(F8API)
+//            .then(function (res) {
+//                return res.json();
+//            })
+//            .then(function (data) {
+//                console.log(data); // Log the parsed JSON data
+//                callback(data); // Pass the parsed data to the callback
+//           })
+//            .catch( err=> console.error("err"))
+//    }
+
+//   function start() {
+//        getCourses(function (courses) {
+//            ReactDOM.render(renderCourses(courses), root);
+//        });
+//    }
+
+//    start();
+    //
+
+    const Courses = [
+    {
+      "id": 15,
+      "title": "HTML CSS Pro",
+      "slug": "htmlcss",
+      "description": "Từ cơ bản tới chuyên sâu, thực hành 8 dự án, hàng trăm bài tập, trang hỏi đáp riêng, cấp chứng chỉ sau khóa học và mua một lần học mãi mãi.",
+      "image": "courses/15/62f13d2424a47.png",
+    },
+    {
+      "id": 27,
+      "title": "Ngôn ngữ tiền xử lý Sass",
+      "slug": "sass",
+      "description": "Đây là một khóa học nhỏ được tách ra từ 2 chương học trong khóa HTML CSS Pro. Kiến thức về Sass trong khóa này bạn có thể áp dụng ngay vào các dự án của bạn.",
+      "image": "courses/27/64e184ee5d7a2.png",
+    },
+    {
+      "id": 19,
+      "title": "JavaScript Pro",
+      "slug": "javascript-pro",
+      "description": "Khóa học JavaScript Pro",
+      "image": "courses/19/62f13cb607b4b.png",
+    },
+    {
+      "id": 20,
+      "title": "NextJS Pro",
+      "slug": "reactjs-pro",
+      "description": "Khóa học NextJS Pro",
+      "image": "courses/20/648020fc16597.png",
+    }
+  ]
+    var root = document.getElementById('root');
+
+
+    function CourseItem({course, onClick}) {
+        return (
+            <div className="Course-item">
+                <h2 onClick= {() => onClick(course)}>{course.title}</h2>
+                <img src={course.image} alt={course.slug} />
+                <p>{course.description}</p>
+                <p>{course.slug}</p>
+            </div>
+        );
+    }
+
+
+    function App() {
+        const handleClick = (course) => {
+            console.log(course.id)
+        }
+        return (
+            <div>
+                {Courses.map(course => (
+                    <div className="post-list" key={course.id}>
+                        <CourseItem
+                            course = {course}
+                            onClick={handleClick}
+                        />
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
+    function App2( ) {
+        return (
+            <div>
+                <button
+                    onClick = {() => console.log(Math.random())
+                    }
+                >
+                Click me!  
+                </button>
+            </div>
+        )
+    }
+    ReactDOM.render(<App />, root)
+</script>

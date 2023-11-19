@@ -3,6 +3,7 @@ const router = express.Router()
 
 const page2Controller = require('../app/controllers/Page2Controller')
 
+router.get('/page2.1', page2Controller.showHai)
 router.get('/:slug', page2Controller.show)
 router.get('/', page2Controller.page2)
 
