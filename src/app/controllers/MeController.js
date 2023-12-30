@@ -19,8 +19,8 @@ class MeController {
     ])
       .then(([courses, deletedCount]) =>
         res.render('me/stored-courses', {
-          deletedCount,
           courses: mutipleMongooseToObject(courses),
+          deletedCount,
         }),
       )
       .catch(next)

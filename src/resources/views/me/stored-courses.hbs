@@ -1,7 +1,7 @@
-<form class="mt-4" name="container-form" method="POST" action="/courses/handle-form-actions">
+<form class="mt-5" name="container-form" method="POST" action="/courses/handle-form-actions">
   <h3>Danh Sách</h3>
   <div class="row">
-      <div class="mt-4 d-flex align-items-center .col-md-4">
+      <div class="mt-4 d-flex align-items-center col-md-4">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
           <label class="form-check-label select-all" for="checkbox-all">
@@ -30,7 +30,7 @@
         {{{sorttable 'name' _sort}}}
         </th>
       <th scope="col">
-        Anpha
+        Người Hướng Dẫn
         {{{sorttable 'anpha' _sort}}}
         </th>
       <th scope="col" colspan="2">
@@ -107,6 +107,8 @@
         var checkAllSubmitBtn = $('.check-all-submit-btn')
 
         //when diglog confirm clicked
+        var notify = $('#delete-course-model')
+
         notify.on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
             courseId = button.data('id') 

@@ -6,11 +6,13 @@ const Schema = mongoose.Schema
 
 const Course = new Schema(
   {
+    //id_Course: string,
     name: { type: String, required: true },
     description: { type: String },
     image: { type: String },
     slug: { type: String, slug: 'name', unique: true },
     videoID: { type: String, required: true },
+    //audiofile: String,
     anpha: { type: String, maxLength: 255 },
     beta: { type: String, maxLength: 255 },
   },

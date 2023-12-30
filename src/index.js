@@ -8,7 +8,7 @@ const route = require('./routes')
 const SortMiddleware = require('./app/middlewares/SortMiddleware')
 
 const app = express()
-const port = 3000
+const port = 4000
 
 //data
 const db = require('./config/db')
